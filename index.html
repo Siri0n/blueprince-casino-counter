@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Casino Counter</title>
+    <style></style>
+  </head>
+  <body>
+    <div id="main">
+      <div id="counters">
+        <table>
+          <tr>
+            <td>
+              <div data-type="empty">
+                <img src="img/empty.png" />
+                <span>0</span>
+              </div>
+            </td>
+            <td>
+              <div data-type="coin">
+                <img src="img/coin.png" />
+                <span>0</span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div data-type="threeCoins">
+                <img src="img/threeCoins.png" />
+                <span>0</span>
+              </div>
+            </td>
+            <td>
+              <div data-type="crown">
+                <img src="img/crown.png" />
+                <span>0</span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div data-type="snake">
+                <img src="img/snake.png" />
+                <span>0</span>
+              </div>
+            </td>
+            <td>
+              <div data-type="net">
+                <img src="img/net.png" />
+                <span>0</span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div data-type="x2">
+                <img src="img/x2.png" />
+                <span>0</span>
+              </div>
+            </td>
+            <td>
+              <div data-type="clover">
+                <img src="img/clover.png" />
+                <span>0</span>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <button onclick="copyStats();">Скопировать статистику</button>
+    </div>
+    <script>
+      const counters = {
+        empty: 0,
+        coin: 0,
+        threeCoins: 0,
+        crown: 0,
+        snake: 0,
+        net: 0,
+        clover: 0,
+        x2: 0,
+      };
+      const copyStats = () => {
+        navigator.clipboard.writeText("lol kek cheburek");
+      };
+    </script>
+  </body>
+</html>

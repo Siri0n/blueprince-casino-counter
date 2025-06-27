@@ -190,6 +190,11 @@
         clover: 0,
         x2: 0,
       };
+
+      Object.keys(counters).forEach(key => {
+        counters[key] = localStorage.getItem(key) || 0;
+        document.querySelector(`div[data-type=${key}]>span`).innerText = counters[key];
+      })
       const copyStats = () => {
         const result = Object.entries(counters).map(([key, val]) => `${key}: ${val}`).join('\n');
         navigator.clipboard.writeText(result);
@@ -201,6 +206,7 @@
           return;
         }
         counters[type]++;
+        localStorage.setItem(type, counters[type]);
         target.querySelector('span').innerText = counters[type];
 
       })

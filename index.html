@@ -173,7 +173,7 @@
           </tr>
           <tr>
             <td colspan=2"">
-              <button onclick="copyStats();">Скопировать статистику</button>
+              <button onclick="copyStats();">Скопировать в буфер</button>
             </td>
           </tr>
         </table>
@@ -191,8 +191,19 @@
         x2: 0,
       };
       const copyStats = () => {
-        navigator.clipboard.writeText("lol kek cheburek");
+        const result = Object.entries(counters).map(([key, val]) => `${key}: ${val}`).join('\n');
+        navigator.clipboard.writeText(result);
       };
+      document.getElementById("main").addEventListener("click", e => {
+        const target = event.target.closest('div');
+        const type = target?.dataset?.type;
+        if(!type){
+          return;
+        }
+        counters[type]++;
+        target.querySelector('span').innerText = counters[type];
+
+      })
     </script>
   </body>
 </html>
